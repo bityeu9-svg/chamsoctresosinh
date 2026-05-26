@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
     <style>
-        /* Tối ưu hiệu ứng cuộn */
+        /* Tối ưu hiệu ứng cuộn mượt */
         html {
             scroll-behavior: smooth;
         }
@@ -40,7 +40,7 @@
             background-color: rgba(255, 255, 255, 0.95);
         }
 
-        /* Thanh tiến trình cuộn trang */
+        /* Thanh tiến trình cuộn trang tự động */
         .reading-progress-bar {
             position: absolute;
             bottom: 0;
@@ -107,7 +107,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- Danh sách thẻ bài viết (Article Cards Grid) --- */
+        /* --- Danh sách thẻ bài viết (Grid Cards) --- */
         .article-card {
             background: #fff;
             border: none;
@@ -201,7 +201,7 @@
             gap: 10px;
         }
 
-        /* --- Footer trang danh mục --- */
+        /* --- Footer trang --- */
         footer {
             background-color: #212529;
             color: #a8b2bc;
@@ -228,7 +228,7 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Lớp phục vụ hiệu ứng cuộn hiện hình (Scroll Reveal) */
+        /* Hiệu ứng cuộn hiện hình (Scroll Reveal) */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -281,15 +281,32 @@
             <div class="col-md-6 col-lg-4 reveal">
                 <article class="article-card">
                     <div class="card-img-wrapper">
-                        <img src="image/img-14.jpg" alt="Hướng dẫn trẻ bú đúng tư thế">
+                        <img src="image/img-07.jpg" alt="Cơ chế tiết sữa">
                     </div>
                     <div class="card-body-custom">
-                        <div class="card-tag">Tư thế chuẩn</div>
-                        <h2 class="card-title-custom">Hướng dẫn cho trẻ bú đúng: Đúng tư thế & ngậm bắt vú đúng</h2>
-                        <p class="card-text-custom">Chi tiết về 4 nguyên tắc vàng bế trẻ, các tư thế nằm nghiêng, bế chéo tay giúp trẻ ngậm khớp chuẩn và các phương pháp vỗ ợ hơi tránh nôn trớ sau bú.</p>
+                        <div class="card-tag">Giải phẫu học</div>
+                        <h2 class="card-title-custom">Hiểu về cơ chế tiết sữa - Cơ chế hoạt động của nang sữa</h2>
+                        <p class="card-text-custom">Tìm hiểu cấu trúc nang sữa bên trong bầu ngực mẹ, cách cơ thể sản xuất và bài xuất sữa thông qua ống dẫn sữa dưới kích thích từ việc bé bú.</p>
                         <div class="card-footer-custom">
-                            <span class="text-muted small"><i class="bi bi-clock"></i> 5 phút đọc</span>
-                            <a href="huong_dan_cho_be_bu_dung_tu_the.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
+                            <span class="text-muted small"><i class="bi bi-clock"></i> 3 phút đọc</span>
+                            <a href="co_che_tiet_sua.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal">
+                <article class="article-card">
+                    <div class="card-img-wrapper">
+                        <img src="image/img-11.jpg" alt="Có nên cho trẻ sơ sinh uống nước">
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="card-tag">Mẹo chăm bé</div>
+                        <h2 class="card-title-custom">Có nên cho trẻ sơ sinh uống nước không? Lời khuyên WHO</h2>
+                        <p class="card-text-custom">Phân tích lý do tại sao sữa mẹ đã chứa đủ 80% nước và việc bổ sung nước quá sớm trước 6 tháng tuổi có thể gây nguy cơ nhiễm độc nước cho trẻ.</p>
+                        <div class="card-footer-custom">
+                            <span class="text-muted small"><i class="bi bi-clock"></i> 4 phút đọc</span>
+                            <a href="co_nen_cho_tre_so_sinh_uong_nuoc.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
@@ -302,10 +319,10 @@
                     </div>
                     <div class="card-body-custom">
                         <div class="card-tag">Bảo quản sữa</div>
-                        <h2 class="card-title-custom">Hướng dẫn cách cất trữ, đông lạnh và rã đông sữa mẹ an toàn</h2>
+                        <h2 class="card-title-custom">Hướng dẫn cách cất trữ, đông lạnh và rã đông sữa mẹ đúng cách</h2>
                         <p class="card-text-custom">Quy trình xử lý sữa sau vắt, thời gian bảo quản tủ mát/tủ đông tối ưu và cách rã đông khoa học giúp giữ nguyên vẹn hàm lượng Vitamin và kháng thể.</p>
                         <div class="card-footer-custom">
-                            <span class="text-muted small"><i class="bi bi-clock"></i> 4 phút đọc</span>
+                            <span class="text-muted small"><i class="bi bi-clock"></i> 5 phút đọc</span>
                             <a href="huong_dan_bao_quan_sua_me_dung_cach.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -315,32 +332,15 @@
             <div class="col-md-6 col-lg-4 reveal">
                 <article class="article-card">
                     <div class="card-img-wrapper">
-                        <img src="image/img-13.jpg" alt="Trẻ từ chối sữa mẹ trữ đông">
+                        <img src="image/img-05.jpg" alt="Sinh mổ cho con bú">
                     </div>
                     <div class="card-body-custom">
-                        <div class="card-tag">Mẹo chăm bé</div>
-                        <h2 class="card-title-custom">Tại sao trẻ từ chối sữa mẹ trữ đông và giải pháp khắc phục</h2>
-                        <p class="card-text-custom">Phân tích hiện tượng sữa tích tụ enzyme lipase tạo mùi xà phòng hoặc mùi lạ sau rã đông khiến trẻ không chịu bú và cách xử lý đun khử trùng hiệu quả.</p>
-                        <div class="card-footer-custom">
-                            <span class="text-muted small"><i class="bi bi-clock"></i> 3 phút đọc</span>
-                            <a href="tai_sao_con_tu_choi_sua_me_tru_dong.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4 reveal">
-                <article class="article-card">
-                    <div class="card-img-wrapper">
-                        <img src="image/img-12.jpg" alt="Vệ sinh thiết bị hút sữa">
-                    </div>
-                    <div class="card-body-custom">
-                        <div class="card-tag">An toàn vệ sinh</div>
-                        <h2 class="card-title-custom">Cách tiệt trùng và bảo quản máy hút sữa tránh nhiễm khuẩn</h2>
-                        <p class="card-text-custom">Hướng dẫn làm sạch các bộ phận van, phễu, bình sữa theo khuyến cáo của Bộ Y tế nhằm ngăn ngừa nấm mốc phát triển nguy hại đến hệ tiêu hóa trẻ sơ sinh.</p>
+                        <div class="card-tag">Sản khoa thực hành</div>
+                        <h2 class="card-title-custom">Hướng dẫn các mẹ sinh mổ cho con bú mẹ hiệu quả và an toàn</h2>
+                        <p class="card-text-custom">Cách vượt qua rào cản đau vết mổ, lựa chọn tư thế bú không đè lên thành bụng và mốc thời gian gọi sữa non về sớm nhất dành riêng cho sản phụ sinh mổ.</p>
                         <div class="card-footer-custom">
                             <span class="text-muted small"><i class="bi bi-clock"></i> 4 phút đọc</span>
-                            <a href="ve_sinh_may_hut_sua_dung_de_bao_ve_tre.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
+                            <a href="huong_dan_cac_me_sinh_mo_cho_con_bu_me_hieu_qua.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
@@ -349,15 +349,15 @@
             <div class="col-md-6 col-lg-4 reveal">
                 <article class="article-card">
                     <div class="card-img-wrapper">
-                        <img src="image/img-11.jpg" alt="Dinh dưỡng giai đoạn cho con bú">
+                        <img src="image/img-14.jpg" alt="Hướng dẫn trẻ bú đúng tư thế">
                     </div>
                     <div class="card-body-custom">
-                        <div class="card-tag">Dinh dưỡng</div>
-                        <h2 class="card-title-custom">Chế độ dinh dưỡng giai đoạn cho con bú giúp sữa đặc và thơm</h2>
-                        <p class="card-text-custom">Lời khuyên hữu ích về thực đơn hàng ngày của mẹ, nhóm thực phẩm lợi sữa, và những điều cần kiêng cữ để tránh ảnh hưởng đến hệ tiêu hóa non nớt của trẻ.</p>
+                        <div class="card-tag">Tư thế chuẩn</div>
+                        <h2 class="card-title-custom">Hướng dẫn cho trẻ bú đúng: Tư thế & ngậm bắt vú đúng chuẩn</h2>
+                        <p class="card-text-custom">Chi tiết về 4 nguyên tắc vàng bế trẻ, các tư thế nằm nghiêng, bế chéo tay giúp trẻ ngậm khớp chuẩn và phương pháp vỗ ợ hơi tránh nôn trớ sau bú.</p>
                         <div class="card-footer-custom">
                             <span class="text-muted small"><i class="bi bi-clock"></i> 5 phút đọc</span>
-                            <a href="dinh_duong_giai_doan_cho_con_bu.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
+                            <a href="huong_dan_cho_be_bu_dung_tu_the.html" class="btn-readmore">Xem chi tiết <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
@@ -397,7 +397,7 @@
                 for (let i = 0; i < reveals.length; i++) {
                     const windowHeight = window.innerHeight;
                     const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 80; // Khoảng cách pixel nhận biết kích hoạt sớm
+                    const elementVisible = 80; // Khoảng cách kích hoạt sớm
 
                     if (elementTop < windowHeight - elementVisible) {
                         reveals[i].classList.add("active");
