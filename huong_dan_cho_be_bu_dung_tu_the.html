@@ -19,57 +19,96 @@
             background-color: #f4f7f5; 
         }
 
-        /* Khung bài viết với hiệu ứng xuất hiện nhẹ nhàng khi tải trang */
+        /* --- CẤU HÌNH HEADER TOP PAGE UYỂN CHUYỂN --- */
+        .custom-header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1020;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .custom-header.scrolled {
+            padding-top: 2px !important;
+            padding-bottom: 2px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .reading-progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #20c997, #198754);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .main-logo-top {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .main-logo-top:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .brand-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-title-top {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #198754;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-subtitle-top {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .bg-success-soft {
+            background-color: rgba(25, 135, 84, 0.1);
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 30px;
+        }
+
+        /* --- KHUNG BÀI VIẾT CHÍNH --- */
         .article-container { 
             max-width: 850px; 
             margin: 40px auto; 
             background: #fff; 
-            padding: 35px; 
+            padding: 40px; 
             border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
             animation: fadeInUp 0.8s ease-in-out;
         }
-
-        /* Logic hiển thị Logo */
-        .brand-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .brand-logo {
-            height: 50px; /* Định kích thước chuẩn cho logo */
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        .brand-logo:hover {
-            transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi di chuột vào logo */
-        }
-        .date { 
-            color: #6c757d; 
-            font-size: 0.9rem; 
-            margin-bottom: 0;
-        }
         
-        h1 { color: #198754; font-size: 1.9rem; font-weight: 700; margin-bottom: 5px; }
+        h1 { color: #198754; font-size: 1.9rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
         
-        /* Khối mục lục tối giản */
+        /* Khung mục lục (TOC) tinh tế */
         .table-of-contents { 
             background-color: #f8f9fa; 
             border: 1px solid #e9ecef; 
             border-radius: 12px; 
             padding: 20px; 
-            margin-bottom: 30px; 
+            margin: 30px 0; 
             transition: all 0.3s ease;
         }
         .table-of-contents:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             border-color: #198754;
+            box-shadow: 0 5px 15px rgba(25, 135, 84, 0.05);
         }
-        .table-of-contents h4 { color: #333; font-size: 1.1rem; font-weight: bold; border-bottom: 2px solid #198754; padding-bottom: 8px; margin-bottom: 12px; }
+        .table-of-contents h4 { color: #2c3e50; font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid #198754; padding-bottom: 8px; margin-bottom: 12px; }
         .table-of-contents ul { list-style-type: none; padding-left: 0; margin-bottom: 0; }
         .table-of-contents li { margin-bottom: 8px; }
         .table-of-contents a { 
@@ -79,53 +118,54 @@
             transition: all 0.2s ease; 
             font-size: 0.95rem; 
         }
-        /* Hiệu ứng khi di chuột vào mục lục */
         .table-of-contents a:hover { 
             color: #198754; 
             transform: translateX(5px); 
         }
         
-        h2 { color: #198754; font-size: 1.4rem; font-weight: 600; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #20c997; padding-left: 12px; }
-        h3 { color: #0d6efd; font-size: 1.15rem; font-weight: 600; margin-top: 20px; }
-        p, li { text-align: justify; }
+        h2 { color: #198754; font-size: 1.4rem; font-weight: 600; margin-top: 40px; margin-bottom: 18px; border-left: 4px solid #20c997; padding-left: 12px; }
+        h3 { color: #0d6efd; font-size: 1.15rem; font-weight: 600; margin-top: 25px; margin-bottom: 12px; }
+        p, li { text-align: justify; color: #444; }
         ul, ol { margin-bottom: 20px; }
         li { margin-bottom: 8px; }
         
-        /* Khung chứa ảnh mượt mà */
+        /* --- ĐỊNH DẠNG KHUNG ẢNH MINH HỌA HOÀN CHỈNH --- */
         .img-container { 
             text-align: center; 
             margin: 30px 0; 
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             background: #fff;
+            border: 1px solid #f0f0f0;
         }
         .img-container img { 
             max-width: 100%; 
             height: auto; 
-            transition: transform 0.5s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        /* Hiệu ứng zoom ảnh mượt (Ken Burns nhẹ) khi rê chuột */
         .img-container:hover img {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .img-caption { 
             font-size: 0.85rem; 
-            color: #666; 
+            color: #555; 
             font-style: italic; 
-            padding: 10px 15px;
+            padding: 12px 15px;
             background: #fafafa;
             border-top: 1px solid #f0f0f0;
+            font-weight: 500;
         }
         
-        .highlight-box { 
-            background-color: #e8f5e9; 
-            border-left: 4px solid #4caf50; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin: 25px 0; 
+        /* Khung hộp ghi chú / lưu ý an toàn */
+        .danger-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
         }
-        .author-text { text-align: right; font-weight: bold; color: #555; margin-top: 35px; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 15px; }
+        .author-text { text-align: right; font-weight: bold; color: #555; margin-top: 40px; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 20px; }
         
         .btn-back { 
             display: inline-flex; 
@@ -134,8 +174,8 @@
             color: #198754; 
             text-decoration: none; 
             font-weight: 600; 
-            margin-top: 30px; 
-            padding: 10px 20px; 
+            margin-top: 20px; 
+            padding: 10px 24px; 
             border: 1px solid #198754; 
             border-radius: 24px; 
             transition: all 0.3s ease; 
@@ -143,26 +183,23 @@
         .btn-back:hover { 
             background-color: #198754; 
             color: #fff; 
-            box-shadow: 0 4px 12px rgba(25, 135, 84, 0.2);
+            box-shadow: 0 4px 12px rgba(25, 135, 84, 0.15);
         }
 
-        /* Định nghĩa hiệu ứng Fade In khi tải trang */
+        /* --- HIỆU ỨNG CHUYỂN ĐỘNG (SCROLL REVEAL) --- */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .animate-fade-left { animation: fadeLeftIn 0.8s ease forwards; }
+        .animate-fade-right { animation: fadeRightIn 0.8s ease forwards; }
+        @keyframes fadeLeftIn { from { opacity: 0; transform: translateX(-25px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeRightIn { from { opacity: 0; transform: translateX(25px); } to { opacity: 1; transform: translateX(0); } }
 
-        /* Lớp CSS phục vụ hiệu ứng cuộn xuất hiện (Scroll-reveal) */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(25px);
+            transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .reveal.active {
             opacity: 1;
@@ -172,110 +209,142 @@
 </head>
 <body>
 
+    <header class="custom-header shadow-sm sticky-top">
+        <div class="reading-progress-bar" id="readingProgress"></div>
+        <div class="container d-flex align-items-center justify-content-between py-2">
+            
+            <div class="header-brand d-flex align-items-center animate-fade-left">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="image/logo.png" alt="Logo" class="main-logo-top me-2">
+                    <div class="brand-text-group d-none d-sm-block">
+                        <span class="brand-title-top">TRUNG TÂM Y TẾ THANH KHÊ</span>
+                        <span class="brand-subtitle-top">Chăm Sóc Sức Khỏe Cộng Đồng</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-meta text-end animate-fade-right">
+                <span class="badge bg-success-soft text-success mb-1">
+                    <i class="bi bi-bookmark-heart-fill me-1"></i> Y học thường thức
+                </span>
+                <div class="text-muted small">
+                    <i class="bi bi-calendar3 me-1"></i> <span id="currentDate">--/--/----</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
     <div class="container">
         <div class="article-container">
             
-            <div class="brand-header">
-                <div class="date"><i class="bi bi-calendar3"></i> Chuyên mục: Nuôi con bằng sữa mẹ</div>
-                <img src="image/logo.png" alt="Logo" class="brand-logo">
-            </div>
-
-            <h1>Hướng dẫn cho trẻ bú đúng: Đúng tư thế, ngậm bắt vú đúng và theo dõi sau bú</h1>
-            <p class="text-muted small mb-4">Tài liệu chuẩn hóa hướng dẫn thực hành lâm sàng sản - nhi</p>
-
-            <p>Nuôi con bằng sữa mẹ là một hành trình thiêng liêng nhưng cũng đầy bỡ ngỡ đối với nhiều người mẹ, đặc biệt là những ai lần đầu làm mẹ. Việc cho trẻ bú đúng cách không chỉ giúp bé nhận được tối đa nguồn dinh dưỡng quý giá mà còn giúp mẹ tránh được các tình trạng đau nhức, nứt đầu ti hay tắc tia sữa. Dưới đây là hướng dẫn chi tiết từ các chuyên gia y tế.</p>
+            <h1>Cho trẻ bú đúng tư thế</h1>
+            <p class="text-muted small mb-4"><i class="bi bi-info-circle"></i> Tài liệu hướng dẫn chuẩn hóa y học cộng đồng</p>
 
             <div class="table-of-contents">
                 <h4><i class="bi bi-list-ul"></i> Mục lục bài viết</h4>
                 <ul>
-                    <li><a href="#dung-tu-the"><i class="bi bi-chevron-right text-success small"></i> 1. 4 Nguyên tắc tư thế cho trẻ bú đúng</a></li>
-                    <li><a href="#cac-tu-the-pho-bien"><i class="bi bi-chevron-right text-success small"></i> 2. Các tư thế bế bé bú phổ biến</a></li>
-                    <li><a href="#ngam-bat-vu"><i class="bi bi-chevron-right text-success small"></i> 3. Cách giúp trẻ ngậm bắt vú đúng chuẩn</a></li>
-                    <li><a href="#theo-doi-sau-bu"><i class="bi bi-chevron-right text-success small"></i> 4. Theo dõi và chăm sóc bé sau khi bú</a></li>
+                    <li><a href="#bon-diem-then-chot"><i class="bi bi-chevron-right text-success small"></i> 1. Bốn điểm then chốt để bế trẻ khi cho trẻ bú</a></li>
+                    <li><a href="#chuan-bi-khong-gian"><i class="bi bi-chevron-right text-success small"></i> 2. Chuẩn bị không gian và các tư thế bế bú</a></li>
+                    <li><a href="#tu-the-canh-tay-thuan"><i class="bi bi-chevron-right text-success small"></i> 3. Tư thế bế bé với cánh tay thuận (tư thế ôm nôi)</a></li>
+                    <li><a href="#tu-the-nam-nghieng"><i class="bi bi-chevron-right text-success small"></i> 4. Tư thế nằm nghiêng</a></li>
+                    <li><a href="#the-nam-nua-ngoi"><i class="bi bi-chevron-right text-success small"></i> 5. Thế nằm nửa ngồi</a></li>
                 </ul>
             </div>
 
-            <div class="reveal">
-                <h2 id="dung-tu-the">1. 4 Nguyên tắc tư thế cho trẻ bú đúng</h2>
-                <p>Bất kể mẹ lựa chọn tư thế bế hay nằm, đều cần phải tuân thủ nghiêm ngặt 4 nguyên tắc vàng sau đây để đảm bảo cơ thể bé được nâng đỡ thoải mái nhất:</p>
-                <ul>
-                    <li><strong>Thẳng hàng:</strong> Đầu và thân trẻ phải nằm trên một đường thẳng. Tránh để đầu trẻ bị vẹo hoặc ngửa quá mức.</li>
-                    <li><strong>Sát người:</strong> Mặt của trẻ phải đối diện với vú mẹ, mũi trẻ đối diện với núm vú. Bụng trẻ áp sát vào bụng mẹ.</li>
-                    <li><strong>Đỡ toàn thân:</strong> Mẹ phải đỡ toàn bộ cơ thể trẻ (đặc biệt là trẻ sơ sinh), không chỉ đỡ riêng phần đầu và vai.</li>
-                    <li><strong>Gần gũi:</strong> Trẻ được bế cận kề và mẹ luôn giữ tư thế ngồi hoặc nằm thoải mái nhất, có thể dùng thêm gối tựa nâng đỡ tay mẹ.</li>
-                </ul>
-            </div>
-
-            <div class="reveal">
-                <h2 id="cac-tu-the-pho-bien">2. Các tư thế bế bé bú phổ biến</h2>
-                <p>Mẹ có thể linh hoạt thay đổi giữa các tư thế dưới đây tùy thuộc vào hoàn cảnh và sức khỏe của mẹ:</p>
-                
-                <h3>a. Tư thế bế thuận tay (Cradle Hold)</h3>
-                <p>Đây là tư thế truyền thống và phổ biến nhất. Đầu của bé sẽ tựa lên nếp gấp khuỷu tay của mẹ cùng phía với bầu ngực đang bú. Tay còn lại của mẹ đỡ mông hoặc đùi bé.</p>
-
-                <h3>b. Tư thế bế chéo tay (Cross-Cradle Hold)</h3>
-                <p>Ngược lại với tư thế trên, mẹ dùng tay đối diện với bầu ngực bú để đỡ đầu và cổ bé. Tư thế này cực kỳ thích hợp cho các mẹ có con sinh non hoặc các bé khó ngậm bắt vú vì mẹ dễ dàng kiểm soát được đầu của con.</p>
+            <div class="reveal" id="bon-diem-then-chot">
+                <h2>1. Bốn điểm then chốt để bế trẻ khi cho trẻ bú (đặt trẻ vào vú mẹ)</h2>
+                <ol>
+                    <li>Đầu và thân trẻ nằm trên 1 đường thẳng.</li>
+                    <li>Toàn thân trẻ sát vào người mẹ, bụng trẻ áp sát vào bụng mẹ;</li>
+                    <li>Mặt trẻ quay vào vú mẹ, mũi trẻ đối diện với núm vú;</li>
+                    <li>Đối với trẻ sơ sinh, bà mẹ không những đỡ đầu, vai mà còn phải đỡ phần mông trẻ.</li>
+                </ol>
             </div>
 
             <div class="img-container reveal">
-                <img src="image/img-14.jpg" alt="Các tư thế cho bé bú đúng cách">
-                <div class="img-caption">Hình 1: Các tư thế bế cho trẻ bú đúng tư thế (Thuận tay, chéo tay, ôm bóng)</div>
+                <img src="image/img-15.png" alt="Bốn điểm then chốt để bế trẻ khi cho trẻ bú">
+                <div class="img-caption">Hình 1: Đồ họa minh họa trực quan 4 điểm then chốt khi đặt trẻ vào vú mẹ</div>
             </div>
 
-            <div class="reveal">
-                <h3>c. Tư thế ôm bóng (Football Hold)</h3>
-                <p>Bé được ôm bên hông mẹ, chân bé hướng về phía sau lưng mẹ, đầu bé nằm lòng bàn tay mẹ đỡ trước ngực. Tư thế này rất tốt cho mẹ sinh mổ (tránh đè vào vết mổ ở bụng) hoặc mẹ có bầu ngực lớn.</p>
-
-                <h3>d. Tư thế nằm nghiêng (Side-Lying Position)</h3>
-                <p>Cả mẹ và bé cùng nằm nghiêng trên giường đối diện nhau. Tư thế này giúp mẹ được nghỉ ngơi tối đa, đặc biệt là vào ban đêm hoặc những ngày đầu sau sinh.</p>
+            <div class="reveal" id="chuan-bi-khong-gian">
+                <h2>2. Chuẩn bị không gian và các tư thế bế bú</h2>
+                <p>Bế bé cho bú, điều đầu tiên mẹ hãy chọn cho mình không gian thoải mái nhất, sử dụng các vật dụng hỗ trợ nếu cần.</p>
             </div>
 
+            <div class="img-container reveal">
+                <img src="image/img-16.png" alt="Không gian thoải mái và vật dụng hỗ trợ khi cho bú">
+                <div class="img-caption">Hình 2: Chuẩn bị không gian thư giãn yên tĩnh giúp quá trình cho bú hiệu quả hơn</div>
+            </div>
 
-            <div class="reveal">
-                <h2 id="ngam-bat-vu">3. Cách giúp trẻ ngậm bắt vú đúng chuẩn</h2>
-                <p>Ngậm bắt vú đúng là yếu tố quyết định giúp dòng sữa chảy đều và mẹ không bị đau rát. Để kích thích bé mở rộng miệng, mẹ hãy chạm nhẹ núm vú vào môi trên của bé.</p>
-                
-                <div class="highlight-box">
-                    <h5><i class="bi bi-check-circle-fill text-success"></i> 4 Dấu hiệu trẻ ngậm bắt vú đúng:</h5>
-                    <ol class="mb-0">
-                        <li>Miệng trẻ mở rộng, ngậm sâu vào quầng vú chứ không phải chỉ ngậm mỗi núm vú.</li>
-                        <li>Quầng vú còn lại ở phía trên môi trên nhiều hơn ở phía dưới môi dưới.</li>
-                        <li>Môi dưới của trẻ hướng ra ngoài (như môi cá), cằm trẻ tì sát vào bầu vú mẹ.</li>
-                        <li>Mẹ thấy má trẻ phồng tròn khi mút (không bị hóp) và nghe rõ tiếng nuốt sữa đều đặn. Mẹ không có cảm giác đau rát núm vú.</li>
-                    </ol>
+            <div class="reveal" id="tu-the-canh-tay-thuan">
+                <h2>3. Tư thế bế bé với cánh tay thuận (tư thế ôm nôi)</h2>
+                <p>Đây có thể là tư thế bú mẹ phổ biến nhất và rất phù hợp cho những lần đầu mẹ và bé bắt đầu tập bú. Tuy nhiên, đối với các mẹ sanh mổ có thể sẽ không thoải mái lắm vì em bé nằm ngang bụng mẹ gần với vết mổ.</p>
+                <p>Đối với tư thế này, mẹ ngồi tư thế thẳng lưng trên ghế có tựa lưng, hoặc ngồi trên giường tựa lưng vào tường. Cần lót thêm đệm hoặc gối để mẹ được thoải mái nhất.</p>
+                <p>Cho bé bú bên bầu ngực nào thì dùng tay cùng phía với bầu ngực đó để đỡ bé (Ví dụ: bú bầu ngực bên <strong>phải</strong> thì dùng tay <strong>phải</strong> để ôm và nâng đỡ người bé).</p>
+                <ul>
+                    <li>Khuỷu tay nâng đỡ đầu, cẳng tay ôm dọc thân người trẻ.</li>
+                    <li>Thân người bé hướng vào người mẹ, bụng bé chạm bụng mẹ.</li>
+                </ul>
+
+                <div class="danger-box">
+                    <h5><i class="bi bi-exclamation-triangle-fill text-warning"></i> Mẹ nên tránh các lỗi sau:</h5>
+                    <ul class="mb-0">
+                        <li>Ngồi không thoải mái.</li>
+                        <li>Không ôm trẻ sát vào lòng và để cổ trẻ bị vẹo.</li>
+                        <li>Không đỡ toàn thân trẻ.</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="img-container reveal">
-                <img src="image/img-15.jpg" alt="Ngậm bắt vú đúng và ngậm bắt vú sai">
-                <div class="img-caption">Hình 2: So sánh cấu trúc miệng trẻ khi ngậm bắt vú đúng (trái) và ngậm sai (phải)</div>
+                <img src="image/img-17.png" alt="Tư thế bế bé với cánh tay thuận">
+                <div class="img-caption">Hình 3: Kỹ thuật bế thuận tay - Đầu tựa nếp khuỷu tay và thân người áp bụng mẹ</div>
             </div>
 
+            <div class="reveal" id="tu-the-nam-nghieng">
+                <h2>4. Tư thế nằm nghiêng</h2>
+                <p>Đây là một tư thế phù hợp với các mẹ sanh mổ hoặc các mẹ sanh khó hay trong trường hợp cho bé bú vào ban đêm.</p>
+                <p>Mẹ nằm nghiêng 1 bên và đặt bé ngay bên cạnh.</p>
+                <p>Em bé nằm nghiêng hướng về mẹ, bụng bé chạm bụng mẹ, sao cho <strong>tai – vai – hông</strong> bé phải nằm thẳng hàng.</p>
+                <p>Mẹ có thể dùng gối để tựa đầu, tựa lưng và kẹp giữa 2 gối sao cho thoải mái nhất. Lưu ý gối tựa đầu của mẹ phải đảm bảo không được quá gần đầu hay mặt bé. Mẹ dùng 1 tay để chặn gối lại để gối không chạm vào bé.</p>
+                <p>Tay còn lại mẹ dùng hỗ trợ bé nằm đúng tư thế và nâng đỡ bầu vú để bé dễ dàng ngậm bắt vú.</p>
+                <p>Cuộn khăn hoặc mền lót phía lưng bé để hỗ trợ bé nằm nghiêng bú được dễ dàng. Lưu ý cần lấy khăn/mền ra khỏi khi bé đã bú xong.</p>
 
-            <div class="reveal">
-                <h2 id="theo-doi-sau-bu">4. Theo dõi và chăm sóc bé sau khi bú</h2>
-                <p>Sau khi bé đã bú no và tự động nhả ti ra, mẹ cần thực hiện và theo dõi các bước quan trọng sau:</p>
-                
-                <h3>a. Vỗ ợ hơi cho trẻ</h3>
-                <p>Trong quá trình mút, trẻ dễ nuốt phải không khí vào dạ dày gây đầy hơi, nôn trớ. Mẹ nên bế đứng bé áp ngực vào vai mẹ, hoặc cho bé ngồi trên đùi và khum lòng bàn tay vỗ nhẹ lưng bé từ dưới lên trên cho đến khi nghe tiếng bé ợ hơi.</p>
-
-                <h3>b. Theo dõi dấu hiệu no bụng</h3>
-                <p>Bé bú đủ và no sẽ có biểu hiện: Thả lỏng hai bàn tay, ngủ sâu giấc hoặc chơi ngoan từ 2 - 3 tiếng sau bú. Số lượng tã ướt từ 6 lần trở lên mỗi ngày và nước tiểu có màu vàng nhạt, không mùi hôi.</p>
+                <div class="danger-box">
+                    <h5><i class="bi bi-shield-fill-exclamation text-warning"></i> Lưu ý đặc biệt quan trọng:</h5>
+                    <p class="mb-0">Giai đoạn 1-2 ngày đầu bé có thể hay nhả nhớt trong miệng, bị ọc hoặc bị sặc nên khi nằm cho bú mẹ có thể nâng đầu giường lên cao hơn một chút hoặc lót cho bé nằm tư thế đầu cao hơn thân người. Người thân đi chăm sản phụ cần canh chừng 2 mẹ con lúc này vì mẹ còn mệt nên trong quá trình nằm cho bú có thể sẽ ngủ thiếp đi và đè con.</p>
+                </div>
             </div>
 
             <div class="img-container reveal">
-                <img src="image/img-16.jpg" alt="Vỗ ợ hơi cho bé sau khi bú">
-                <div class="img-caption">Hình 3: Tư thế bế vỗ ợ hơi an toàn cho trẻ sơ sinh sau khi bú no</div>
+                <img src="image/img-18.png" alt="Tư thế nằm nghiêng cho con bú">
+                <div class="img-caption">Hình 4: Cách đặt bé song song trục tai - vai - hông thẳng hàng khi nằm nghiêng</div>
+            </div>
+
+            <div class="reveal" id="the-nam-nua-ngoi">
+                <h2>5. Thế nằm nửa ngồi</h2>
+                <p>Đây còn gọi là tư thế thư giãn hay tư thế bú sinh học. Với tư thế này mẹ có thể ngả người thoải mái trên ghế sô pha hoặc trên giường.</p>
+                <ul>
+                    <li>Mẹ nằm trên gối cao hoặc ghế có tựa lưng ra sau, với tư thế <strong>nửa nằm - nửa ngồi</strong>.</li>
+                    <li>Đặt bé đối diện trên người mẹ, đầu bé nằm giữa 2 bầu vú mẹ.</li>
+                    <li>Theo bản năng bé sẽ tự tìm đến vú mẹ, trong quá trình đó mẹ có thể hỗ trợ phần đầu và vai để bé tìm ngậm bắt vú nhưng không ép bé vào tư thế sẽ khiến bé không thoải mái hợp tác.</li>
+                </ul>
+            </div>
+
+            <div class="img-container reveal">
+                <img src="image/img-19.png" alt="Tư thế nằm nửa ngồi thư giãn">
+                <div class="img-caption">Hình 5: Kỹ thuật cho bú sinh học - Bé tự tìm đầu ti dựa trên bản năng tự nhiên</div>
             </div>
 
             <div class="author-text reveal">
-                <p class="mb-0">Khoa Sơ Sinh - BV Từ Dũ</p>
-                <p class="text-muted small fw-normal">Tổng hợp và biên soạn tài liệu chăm sóc mẹ và bé</p>
+                <p class="mb-0">Khoa Sơ Sinh - Trung tâm Y tế Quận Thanh Khê</p>
+                <p class="text-muted small fw-normal">Biên soạn dựa trên tài liệu chuẩn hóa y học thường thức</p>
             </div>
 
             <div class="reveal">
                 <a href="index.html" class="btn-back">
-                    <i class="bi bi-arrow-left"></i> Quay lại mục lục tài liệu
+                    <i class="bi bi-arrow-left"></i> Quay lại mục lục cẩm nang
                 </a>
             </div>
 
@@ -286,13 +355,26 @@
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Hàm xử lý kiểm tra vị trí để kích hoạt hiệu ứng Reveal khi cuộn
+            const header = document.querySelector(".custom-header");
+            const progress = document.getElementById("readingProgress");
+            const currentDateSpan = document.getElementById("currentDate");
+
+            // 1. Tự động lấy và cập nhật ngày tháng năm thực tế lên header
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+            const yyyy = today.getFullYear();
+            if(currentDateSpan) {
+                currentDateSpan.textContent = `${dd}/${mm}/${yyyy}`;
+            }
+
+            // 2. Hàm xử lý kiểm tra vị trí để kích hoạt hiệu ứng Reveal khi cuộn màn hình
             function revealOnScroll() {
-                var reveals = document.querySelectorAll(".reveal");
-                for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
-                    var elementTop = reveals[i].getBoundingClientRect().top;
-                    var elementVisible = 100; // Khoảng cách pixel kích hoạt hiệu ứng sớm trước khi cuộn đến
+                const reveals = document.querySelectorAll(".reveal");
+                for (let i = 0; i < reveals.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveals[i].getBoundingClientRect().top;
+                    const elementVisible = 80;
 
                     if (elementTop < windowHeight - elementVisible) {
                         reveals[i].classList.add("active");
@@ -300,10 +382,27 @@
                 }
             }
 
-            // Đăng ký sự kiện cuộn màn hình
-            window.addEventListener("scroll", revealOnScroll);
+            // 3. Đăng ký sự kiện cuộn màn hình tổng hợp
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 40) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+
+                const windowHeight = window.innerHeight;
+                const fullHeight = document.documentElement.scrollHeight;
+                const scrolledAmount = window.scrollY;
+                const totalScrollable = fullHeight - windowHeight;
+                
+                if (totalScrollable > 0) {
+                    const progressPercentage = (scrolledAmount / totalScrollable) * 100;
+                    progress.style.width = progressPercentage + "%";
+                }
+
+                revealOnScroll();
+            });
             
-            // Kích hoạt chạy lần đầu để hiển thị phần nội dung trên cùng luôn mà không cần cuộn
             revealOnScroll();
         });
     </script>
